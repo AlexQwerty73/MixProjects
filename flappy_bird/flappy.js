@@ -72,6 +72,9 @@ function draw() {
                     y: ran
                 })
             }
+            if (pipe[i].x < 0 - pipeup.width) {
+                pipe.shift(pipe[i]);
+            }
         }
 
         ctx.drawImage(road, 0, 395);
@@ -100,9 +103,6 @@ function draw() {
             reload();
         }
 
-        if (pipe[i].x < 0 - pipeup.width) {
-            pipe.shift(pipe[i]);
-        }
     } else if (st > 1) {
         ctx.fillStyle = 'rgba(150,150,150,0.01)';
         ctx.fillRect(0, 0, 512, 512);
@@ -113,7 +113,7 @@ function draw() {
     }
 }
 
-canvas.addEventListener("click", function(event) {
+canvas.addEventListener("click", function (event) {
     velY = -4;
     fly.play();
     xPos = 5;

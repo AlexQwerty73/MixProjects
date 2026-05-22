@@ -9,6 +9,11 @@
     user-select: none;
 }
 
+body {
+    background: #949494;
+    min-height: 100vh;
+}
+
 #head-paragraph {
     text-align: center;
     font-size: 40px;

@@ -11,9 +11,14 @@
 body {
     display: flex;
     justify-content: center;
+    background: #70c5ce; /* цвет как в flappy bird */
+    min-height: 100vh;
 }
+
 .canvas {
     margin-top: 10px;
     box-shadow: 0px 0px 4px 9px rgba(34, 60, 80, 0.2);
-    z-index: 10000;
+    width: 256px;
+    height: 512px;
+    display: block;
 }
