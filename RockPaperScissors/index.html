@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock | Paper | Scissors</title>
+</head>
+
+<body>
+    <p id="head-paragraph"><b>Rock | Paper | Scissors</b></p>
+    <div id="game">
+        <pre><h2>Player              <u>Make your choice</u>                 AI</h2></pre>
+        <div id="game-choice">
+            <div class="players-choice" id="player-choice">
+                <img id="player-kulak" src="img/kulak.png">
+            </div>
+            <div id="winner"></div>
+            <div class="players-choice" id="ai-choice">
+                <img id="ai-kulak" src="img/kulak.png">
+            </div>
+        </div>
+        <div id="button-choice">
+            <div class="object-choice" id="rock-choice">
+                <img class="objectId" src="img/rock.png">
+            </div>
+            <div class="object-choice" id="paper-choice">
+                <img class="objectId" src="img/paper.png">
+            </div>
+            <div class="object-choice" id="scissors-choice">
+                <img class="objectId" src="img/Scissors.png">
+            </div>
+        </div>
+        <div id="score">
+            <h3>Score player:
+                <span id="score-player">0</span>
+            </h3>
+            <h3>Score AI:
+                <span id="score-AI">0</span>
+            </h3>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
