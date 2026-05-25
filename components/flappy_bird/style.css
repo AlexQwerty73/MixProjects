@@ -1,24 +1,89 @@
-* {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+/* ══════════════════════════════════════════════
+   style.css — page layout, canvas chrome, size picker.
+   No game logic here — only presentation.
+══════════════════════════════════════════════ */
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    user-select: none;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    background: #70c5ce; /* цвет как в flappy bird */
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Layered radial gradients create a warm sky-to-deep-teal feel */
+    background:
+        radial-gradient(ellipse at 50% 0%,   #4ec0ca 0%, transparent 65%),
+        radial-gradient(ellipse at 20% 100%,  #2d6a6e 0%, transparent 55%),
+        #1a4f54;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 16px;
 }
 
-.canvas {
-    margin-top: 10px;
-    box-shadow: 0px 0px 4px 9px rgba(34, 60, 80, 0.2);
-    width: 256px;
-    height: 512px;
+/* ── Layout container ── */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* ── Canvas ── */
+#canvas {
     display: block;
+    /* Width/height are set in pixels by config.js — no CSS sizing here
+       so the internal resolution always matches the display size exactly */
+    border-radius: 14px;
+    cursor: pointer;
+    touch-action: none;  /* prevent default touch scroll so touchstart fires */
+    box-shadow:
+        0 0   0   2px rgba(255, 255, 255, .08),
+        0 8px 24px    rgba(0,   0,   0,   .45),
+        0 32px 64px   rgba(0,   0,   0,   .35);
+}
+
+/* ── Size picker bar ── */
+.size-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.size-btn {
+    padding: 7px 18px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .08);
+    color: rgba(255, 255, 255, .6);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition:
+        background   .18s,
+        color        .18s,
+        border-color .18s,
+        box-shadow   .18s;
+}
+
+.size-btn:hover {
+    background:   rgba(255, 255, 255, .16);
+    color:        rgba(255, 255, 255, .9);
+    border-color: rgba(255, 255, 255, .30);
+}
+
+/* Active preset — amber highlight matching the in-game score colour */
+.size-btn.active {
+    background:   #fbbf24;
+    border-color: #fbbf24;
+    color:        #1a1200;
+    box-shadow:   0 4px 14px rgba(251, 191, 36, .4);
 }
