@@ -10,7 +10,7 @@ const PROJECTS = [
     { name: 'FlappyB',   src: './components/flappy_bird/index.html' },
     { name: 'M',         src: './components/matrix/index.html' },
     // { name: 'S',         src: './components/SnakeGame/index.html' },
-    { name: 'T',      src: './components/tankGame/main.html' },
+    { name: 'T',      src: './components/tankGame/index.html' },
 ];
 
 /* ─────────────────────────────────────────────────────*/
