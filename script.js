@@ -8,9 +8,9 @@ const PROJECTS = [
     { name: 'Projects',  src: './components/newpoj/index.html' },
     { name: 'RPS',       src: './components/RockPaperScissors/index.html' },
     { name: 'FlappyB',   src: './components/flappy_bird/index.html' },
-    { name: 'M',         src: './components/matrica/index.html' },
-    { name: 'S',         src: './components/SnakeGame/index.html' },
-    // { name: 'T',      src: './components/tankGame/main.html' },
+    { name: 'M',         src: './components/matrix/index.html' },
+    // { name: 'S',         src: './components/SnakeGame/index.html' },
+    { name: 'T',      src: './components/tankGame/main.html' },
 ];
 
 /* ─────────────────────────────────────────────────────*/
