@@ -7,7 +7,7 @@
 }
 
 :root {
-    --nav-h: 52px;
+    --nav-h: 60px;
     --bg: #404045;
     --nav-bg: #111115;
     --border: rgba(255, 255, 255, 0.07);
@@ -94,20 +94,6 @@ nav {
     border-color: rgba(91, 106, 255, 0.38);
 }
 
-.tab .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.4;
-    transition: opacity .18s;
-    flex-shrink: 0;
-}
-
-.tab.active .dot {
-    opacity: 1;
-    background: var(--accent);
-}
 
 /* ── STAGE ── */
 .stage {

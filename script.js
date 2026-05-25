@@ -23,7 +23,7 @@ let current   = null;
 PROJECTS.forEach((proj, i) => {
     const btn = document.createElement('button');
     btn.className = 'tab';
-    btn.innerHTML = `<span class="dot"></span>${proj.name}`;
+    btn.textContent = proj.name;
     btn.onclick = () => show(i);
     tabsEl.appendChild(btn);
 

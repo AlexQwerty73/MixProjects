@@ -9,28 +9,46 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #042104;
-    animation: animate_colo 8s linear infinite;
+    background: #000;
+    animation: animate_colo 12s linear infinite;
+    overflow: hidden;
 }
 
 @keyframes animate_colo {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
+    0%   { filter: hue-rotate(0deg);   }
+    100% { filter: hue-rotate(360deg); }
 }
 
+/* ── CONTAINER ── */
 section .container {
+    position: relative;
     display: flex;
 }
 
+/* Фоновий bloom у центрі ∞ */
+section .container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 220px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center,
+        rgba(0, 255, 10, 0.12) 0%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── CIRCLES ── */
 section .container .circle {
     position: relative;
-    width: 150px;
-    height: 150px;
-    margin: 0 -7.5px;
+    width: 200px;
+    height: 200px;
+    margin: 0 -10px;
+    z-index: 1;
 }
 
 section .container .circle span {
@@ -42,16 +60,24 @@ section .container .circle span {
     transform: rotate(calc(18deg * var(--i)));
 }
 
+/* ── DOTS ── */
 section .container .circle span::before {
     content: '';
     position: absolute;
     right: 0;
-    top: calc(50% - 7.5px);
-    width: 15px;
-    height: 15px;
-    background-color: #00ff0a;
+    top: calc(50% - 9px);
+    width: 18px;
+    height: 18px;
+    background: #00ff0a;
     border-radius: 50%;
-    box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 30px #00ff0a, 0 0 40px #00ff0a, 0 0 50px #00ff0a, 0 0 60px #00ff0a;
+    box-shadow:
+        0 0  6px  #00ff0a,
+        0 0 12px  #00ff0a,
+        0 0 24px  #00ff0a,
+        0 0 40px  #00ff0a,
+        0 0 70px  #00ff0a,
+        0 0 100px rgba(0, 255, 10, 0.5),
+        0 0 140px rgba(0, 255, 10, 0.25);
     transform: scale(0.1);
     animation: animate 2s linear infinite;
     animation-delay: calc(0.05s * var(--i));
@@ -67,6 +93,7 @@ section .container .circle span::before {
     }
 }
 
+/* Другий кружок — перевернутий для форми ∞ */
 section .container .circle:nth-child(2) {
     transform: rotate(-180deg);
 }

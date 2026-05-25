@@ -1,0 +1,108 @@
+/* ══════════════════════════════════════════
+   OCEAN THEME  (body[data-theme="ocean"])
+══════════════════════════════════════════ */
+
+body[data-theme="ocean"] {
+    background: linear-gradient(145deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+body[data-theme="ocean"] #game {
+    background: #0d1b2a;
+    border: 1px solid rgba(0, 180, 216, .15);
+    border-radius: 24px;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 180, 216, .06);
+}
+
+body[data-theme="ocean"] header          { border-bottom-color: rgba(0, 180, 216, .12); }
+body[data-theme="ocean"] header h1 {
+    background: none;
+    -webkit-text-fill-color: unset;
+    color: rgba(0, 180, 216, .6);
+    letter-spacing: .18em;
+}
+
+body[data-theme="ocean"] #reset-btn       { border-color: rgba(0, 180, 216, .2); color: rgba(0, 180, 216, .5); }
+body[data-theme="ocean"] #reset-btn:hover { border-color: #00b4d8;              color: #00b4d8; }
+
+body[data-theme="ocean"] .side-label { color: #48cae4; }
+
+body[data-theme="ocean"] .choice-display {
+    background: #162533;
+    border: 1px solid rgba(0, 180, 216, .18);
+    border-radius: 20px;
+}
+
+body[data-theme="ocean"] #vs-label    { color: rgba(72, 202, 228, .4); }
+body[data-theme="ocean"] #result-text { color: rgba(72, 202, 228, .3); }
+
+body[data-theme="ocean"] #result-text.win  { color: #34d399; text-shadow: 0 0 20px rgba(52, 211, 153, .6); }
+body[data-theme="ocean"] #result-text.lose { color: #f87171; text-shadow: 0 0 20px rgba(248, 113, 113, .6); }
+body[data-theme="ocean"] #result-text.draw { color: #fbbf24; text-shadow: 0 0 20px rgba(251, 191,  36, .5); }
+
+/* Buttons */
+body[data-theme="ocean"] .btn {
+    border: none;
+    border-radius: 16px;
+}
+body[data-theme="ocean"] .btn[data-choice="rock"] {
+    background: linear-gradient(145deg, #00b4d8, #0077b6);
+    box-shadow: 0 8px 24px rgba(0, 180, 216, .28);
+}
+body[data-theme="ocean"] .btn[data-choice="paper"] {
+    background: linear-gradient(145deg, #4cc9f0, #4361ee);
+    box-shadow: 0 8px 24px rgba(76, 201, 240, .22);
+}
+body[data-theme="ocean"] .btn[data-choice="scissors"] {
+    background: linear-gradient(145deg, #72efdd, #00b4d8);
+    box-shadow: 0 8px 24px rgba(114, 239, 221, .22);
+}
+body[data-theme="ocean"] .btn:hover {
+    filter: brightness(1.12);
+    transform: translateY(-5px) scale(1.03);
+}
+body[data-theme="ocean"] .btn[data-choice="rock"]:hover     { box-shadow: 0 16px 36px rgba(0,   180, 216, .45); }
+body[data-theme="ocean"] .btn[data-choice="paper"]:hover    { box-shadow: 0 16px 36px rgba(76,  201, 240, .38); }
+body[data-theme="ocean"] .btn[data-choice="scissors"]:hover { box-shadow: 0 16px 36px rgba(114, 239, 221, .4); }
+
+body[data-theme="ocean"] .btn span       { color: rgba(255, 255, 255, .85); }
+body[data-theme="ocean"] .btn:hover span { color: #fff; }
+
+/* Score */
+body[data-theme="ocean"] #score         { border-top-color: rgba(0, 180, 216, .1); }
+body[data-theme="ocean"] .score-label   { color: #48cae4; }
+body[data-theme="ocean"] .score-val     { color: #caf0f8; }
+body[data-theme="ocean"] .score-divider { color: rgba(0, 180, 216, .15); }
+
+/* Arena glow */
+body[data-theme="ocean"] #arena[data-result="win"]  #player-side .choice-display { border-color: #34d399; background: #0d1b2a; box-shadow: 0 0 28px rgba(52, 211, 153, .22); }
+body[data-theme="ocean"] #arena[data-result="win"]  #ai-side .choice-display     { border-color: #f87171; background: #0d1b2a; box-shadow: 0 0 28px rgba(248, 113, 113, .18); }
+body[data-theme="ocean"] #arena[data-result="lose"] #ai-side .choice-display     { border-color: #34d399; background: #0d1b2a; box-shadow: 0 0 28px rgba(52, 211, 153, .22); }
+body[data-theme="ocean"] #arena[data-result="lose"] #player-side .choice-display { border-color: #f87171; background: #0d1b2a; box-shadow: 0 0 28px rgba(248, 113, 113, .18); }
+body[data-theme="ocean"] #arena[data-result="draw"] .choice-display              { border-color: #fbbf24; background: #0d1b2a; box-shadow: 0 0 28px rgba(251, 191,  36, .18); }
+
+/* Trigger */
+body[data-theme="ocean"] #theme-trigger {
+    background: rgba(0, 180, 216, .12);
+    border-color: rgba(0, 180, 216, .25);
+    color: #48cae4;
+}
+body[data-theme="ocean"] #theme-trigger:hover {
+    background: rgba(0, 180, 216, .2);
+    color: #caf0f8;
+}
+
+/* Dropdown */
+body[data-theme="ocean"] #theme-dropdown {
+    background: #0d1b2a;
+    border-color: rgba(0, 180, 216, .15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .5);
+}
+body[data-theme="ocean"] .dropdown-label      { color: rgba(0, 180, 216, .4); }
+body[data-theme="ocean"] .theme-option:hover  { background: rgba(0, 180, 216, .07); }
+body[data-theme="ocean"] .theme-option.active {
+    border-color: rgba(0, 180, 216, .5);
+    background: rgba(0, 180, 216, .1);
+}
+body[data-theme="ocean"] .option-name  { color: #caf0f8; }
+body[data-theme="ocean"] .option-desc  { color: rgba(72, 202, 228, .4); }
+body[data-theme="ocean"] .option-check { color: #00b4d8; }

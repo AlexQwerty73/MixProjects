@@ -1,0 +1,264 @@
+/* ══════════════════════════════════════
+   WIDGETS — sections 2, 4, 5, 12, 13, 19, 20
+══════════════════════════════════════ */
+
+/* ── S2 — Rolling Eyes ── */
+#section2 {
+    background: #3d1c7a;
+}
+
+#section2 .face {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #d8c557;
+    box-shadow: inset -3px 0 0 4px rgba(255, 102, 0, 0.15);
+    position: relative;
+}
+
+#section2 .eye {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 26px;
+    left: 10px;
+}
+
+#section2 .eye:last-child {
+    left: auto;
+    right: 10px;
+}
+
+#section2 .eye::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: s2-eyes 2s ease-in-out infinite;
+}
+
+#section2 .mouth {
+    width: 18px;
+    height: 4px;
+    background: #884d0e;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes s2-eyes {
+    10%     { transform: translate(-13px, -50%); }
+    20%     { transform: translate(-13px, -10px); }
+    30%, 90%{ transform: translate(-50%, -14px); }
+}
+
+
+/* ── S4 — Scroll Mouse ── */
+#section4 .mouse {
+    width: 24px;
+    height: 44px;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    display: flex;
+}
+
+#section4 .mouse-wheel {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 50%;
+    margin: auto;
+    animation: s4-wheel 1s linear infinite;
+}
+
+@keyframes s4-wheel {
+    0%   { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY( 8px); }
+}
+
+
+/* ── S5 — Hamburger ── */
+#section5 .hamburger {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+#section5 .hamburger .line {
+    display: flex;
+    width: 34px;
+    height: 2.5px;
+    background: rgba(255, 255, 255, .8);
+    margin-block: 8px;
+    border-radius: 4px;
+    transition: transform .4s, opacity .2s;
+}
+
+#section5 .hamburger.active .line:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+#section5 .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+#section5 .hamburger.active .line:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+
+/* ── S12 — Tilt Card ── */
+#section12 .card {
+    width: 110px;
+    height: 155px;
+    background: #fff;
+    border-radius: 6px;
+    transform: rotate(18deg) skew(-8deg, -4deg);
+    transition: box-shadow .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section12 .card:hover {
+    box-shadow:
+        rgba(255,255,255,.5)  5px  3px,
+        rgba(255,255,255,.4) 10px  6px,
+        rgba(255,255,255,.3) 15px  9px;
+}
+
+#section12 .card img {
+    width: 55px;
+}
+
+
+/* ── S13 — Hover Card ── */
+#section13 .card {
+    width: 110px;
+    height: 155px;
+    background: #fff;
+    border-radius: 6px;
+    transition: box-shadow .5s, transform .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section13 .card:hover {
+    box-shadow:
+        rgba(255,255,255,.5)  5px  3px,
+        rgba(255,255,255,.4) 10px  6px,
+        rgba(255,255,255,.3) 15px  9px;
+    transform: rotate(18deg) skew(-8deg, -4deg);
+    transition: box-shadow .75s, transform .375s;
+}
+
+#section13 .card img {
+    width: 55px;
+}
+
+
+/* ── S19 — AirPods Case ── */
+#section19 {
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+#air_pods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section19 #top_block_sect19 {
+    width: 130px;
+    height: 48px;
+    background: #f5f5f5;
+    border-radius: 38px 38px 0 0;
+    box-shadow: inset 0 12px 10px 10px rgba(34, 60, 80, .2);
+    position: relative;
+    transform-origin: bottom center;
+    transition: transform 2s ease-in-out, border-radius 2s ease-in-out;
+}
+
+#section19 #bottom_block {
+    width: 130px;
+    height: 118px;
+    border-top: 1px solid #d0d0d0;
+    box-shadow: inset 0 -12px 10px 10px rgba(34, 60, 80, .2);
+    background: #f5f5f5;
+    border-radius: 0 0 22% 22%;
+}
+
+#section19 #shal_bottom,
+#section19 #shal_top_sect19 {
+    width: 50%;
+    height: 5px;
+    background: rgba(0, 0, 0, .1);
+    position: relative;
+    left: 25%;
+    transition: transform 2s ease-in-out;
+}
+
+#section19 #shal_top_sect19 {
+    border-radius: 38px 38px 0 0;
+    top: calc(100% - 5px);
+}
+
+#section19 #shal_bottom {
+    border-radius: 0 0 38px 38px;
+    top: -1px;
+}
+
+#section19 #bottom_top_sect19 {
+    transform-origin: center;
+    transform: translateZ(-35px) translateY(10px) rotateX(90deg);
+    background: #f0f0f0;
+    width: 130px;
+    height: 65px;
+    border-radius: 40px;
+    position: absolute;
+    box-shadow: inset 0 0 20px 10px rgba(78, 78, 78, .4);
+    transition: transform 2s ease-in-out;
+}
+
+#air_pods:hover #bottom_top_sect19 {
+    transform: translateZ(10px) translateY(-5px) rotateX(150deg);
+}
+#air_pods:hover #shal_top_sect19 {
+    transform: translateY(-3em) translateZ(10px) rotateX(10deg);
+}
+#air_pods:hover #top_block_sect19 {
+    transform: translateY(-14px) rotateX(30deg);
+    border-radius: 38px 38px 12px 12px;
+}
+
+
+/* ── S20 — Zoom Image ── */
+#section20 #block {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#section20 #block #img_section_20 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease-in-out;
+}
+
+#section20 #block:hover #img_section_20 {
+    transform: scale(1.3);
+}

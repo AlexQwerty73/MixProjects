@@ -3,46 +3,145 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Rock | Paper | Scissors</title>
+    <title>Rock · Paper · Scissors</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/sunset.css">
+    <link rel="stylesheet" href="css/ocean.css">
 </head>
 
 <body>
-    <p id="head-paragraph"><b>Rock | Paper | Scissors</b></p>
+
     <div id="game">
-        <pre><h2>Player              <u>Make your choice</u>                 AI</h2></pre>
-        <div id="game-choice">
-            <div class="players-choice" id="player-choice">
-                <img id="player-kulak" src="img/kulak.png">
+
+        <header>
+            <h1>Rock · Paper · Scissors</h1>
+            <button id="reset-btn">Reset</button>
+        </header>
+
+        <div id="arena">
+            <div class="side" id="player-side">
+                <span class="side-label">You</span>
+                <div class="choice-display">
+                    <img id="player-img" src="img/kulak.png" alt="player">
+                </div>
             </div>
-            <div id="winner"></div>
-            <div class="players-choice" id="ai-choice">
-                <img id="ai-kulak" src="img/kulak.png">
+
+            <div id="result-display">
+                <span id="vs-label">VS</span>
+                <span id="result-text">?</span>
+            </div>
+
+            <div class="side" id="ai-side">
+                <span class="side-label">AI</span>
+                <div class="choice-display">
+                    <img id="ai-img" src="img/kulak.png" alt="ai">
+                </div>
             </div>
         </div>
-        <div id="button-choice">
-            <div class="object-choice" id="rock-choice">
-                <img class="objectId" src="img/rock.png">
-            </div>
-            <div class="object-choice" id="paper-choice">
-                <img class="objectId" src="img/paper.png">
-            </div>
-            <div class="object-choice" id="scissors-choice">
-                <img class="objectId" src="img/Scissors.png">
-            </div>
+
+        <div id="controls">
+            <button class="btn" data-choice="rock">
+                <img src="img/rock.png" alt="Rock">
+                <span>Rock</span>
+            </button>
+            <button class="btn" data-choice="paper">
+                <img src="img/paper.png" alt="Paper">
+                <span>Paper</span>
+            </button>
+            <button class="btn" data-choice="scissors">
+                <img src="img/Scissors.png" alt="Scissors">
+                <span>Scissors</span>
+            </button>
         </div>
+
         <div id="score">
-            <h3>Score player:
-                <span id="score-player">0</span>
-            </h3>
-            <h3>Score AI:
-                <span id="score-AI">0</span>
-            </h3>
+            <div class="score-item">
+                <span class="score-label">You</span>
+                <span class="score-val" id="score-player">0</span>
+            </div>
+            <span class="score-divider">—</span>
+            <div class="score-item">
+                <span class="score-label">AI</span>
+                <span class="score-val" id="score-ai">0</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── THEME SWITCHER ── -->
+    <div id="theme-switcher">
+        <button id="theme-trigger">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            Style
+        </button>
+
+        <div id="theme-dropdown">
+            <span class="dropdown-label">Choose style</span>
+
+            <button class="theme-option active" data-theme="light">
+                <span class="option-preview">
+                    <span class="preview-bg" style="background: linear-gradient(135deg,#667eea,#764ba2)"></span>
+                    <span class="preview-card" style="background:#fff"></span>
+                </span>
+                <span class="option-info">
+                    <span class="option-name">Light</span>
+                    <span class="option-desc">White card · Purple bg</span>
+                </span>
+                <svg class="option-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </button>
+
+            <button class="theme-option" data-theme="dark">
+                <span class="option-preview">
+                    <span class="preview-bg" style="background:#0d0d1f"></span>
+                    <span class="preview-card" style="background:#141428"></span>
+                </span>
+                <span class="option-info">
+                    <span class="option-name">Dark</span>
+                    <span class="option-desc">Neon buttons · Dark bg</span>
+                </span>
+                <svg class="option-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </button>
+
+            <button class="theme-option" data-theme="sunset">
+                <span class="option-preview">
+                    <span class="preview-bg" style="background:linear-gradient(135deg,#f093fb,#f5576c,#fd7014)"></span>
+                    <span class="preview-card" style="background:#fff"></span>
+                </span>
+                <span class="option-info">
+                    <span class="option-name">Sunset</span>
+                    <span class="option-desc">Warm card · Pink gradient</span>
+                </span>
+                <svg class="option-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </button>
+
+            <button class="theme-option" data-theme="ocean">
+                <span class="option-preview">
+                    <span class="preview-bg" style="background:linear-gradient(135deg,#0f2027,#2c5364)"></span>
+                    <span class="preview-card" style="background:#0d1b2a"></span>
+                </span>
+                <span class="option-info">
+                    <span class="option-name">Ocean</span>
+                    <span class="option-desc">Navy card · Cyan glow</span>
+                </span>
+                <svg class="option-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </button>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="script.js"></script>
 </body>
 
