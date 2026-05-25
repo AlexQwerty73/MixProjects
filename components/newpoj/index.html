@@ -1,185 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI Components</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/loaders.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/effects.css">
-    <link rel="stylesheet" href="css/widgets.css">
+
+    <!-- Loaders -->
+    <script type="module" src="components/blob-loader/index.js"></script>
+    <script type="module" src="components/sound-bars/index.js"></script>
+    <script type="module" src="components/ring-spinner/index.js"></script>
+    <script type="module" src="components/spin-ring/index.js"></script>
+    <script type="module" src="components/bounce-ball/index.js"></script>
+    <script type="module" src="components/skeleton-loader/index.js"></script>
+    <!-- Buttons -->
+    <script type="module" src="components/pulse-button/index.js"></script>
+    <script type="module" src="components/fill-sweep/index.js"></script>
+    <script type="module" src="components/corner-button/index.js"></script>
+    <script type="module" src="components/rainbow-button/index.js"></script>
+    <script type="module" src="components/ripple-button/index.js"></script>
+    <!-- Animations -->
+    <script type="module" src="components/gradient-wave/index.js"></script>
+    <script type="module" src="components/orbit-balls/index.js"></script>
+    <script type="module" src="components/cross-balls/index.js"></script>
+    <script type="module" src="components/star-balls/index.js"></script>
+    <script type="module" src="components/neon-text/index.js"></script>
+    <script type="module" src="components/typing-text/index.js"></script>
+    <script type="module" src="components/infinity-dots/index.js"></script>
+    <!-- Showcase -->
+    <script type="module" src="components/special-jar/index.js"></script>
+    <script type="module" src="components/cube-rotate/index.js"></script>
+    <!-- Interactive -->
+    <script type="module" src="components/toggle-switch/index.js"></script>
+    <script type="module" src="components/floating-label/index.js"></script>
+    <script type="module" src="components/progress-bar/index.js"></script>
+    <script type="module" src="components/heart-like/index.js"></script>
+    <script type="module" src="components/notification-bell/index.js"></script>
+    <!-- Widgets -->
+    <script type="module" src="components/rolling-eyes/index.js"></script>
+    <script type="module" src="components/scroll-mouse/index.js"></script>
+    <script type="module" src="components/hamburger/index.js"></script>
+    <script type="module" src="components/tilt-card/index.js"></script>
+    <script type="module" src="components/hover-card/index.js"></script>
+    <script type="module" src="components/css-clock/index.js"></script>
+    <script type="module" src="components/airpods-case/index.js"></script>
+    <script type="module" src="components/zoom-image/index.js"></script>
 </head>
-
 <body>
-    <div id="main-section">
+<div id="grid">
 
-        <section id="section1" class="block_section">
-            <span class="label">Blob Loader</span>
-            <span class="loader"></span>
-        </section>
+    <!-- ══ LOADERS ═══════════════════════════════════════ -->
+    <div class="category">Loaders</div>
 
-        <section id="section2" class="block_section">
-            <span class="label">Rolling Eyes</span>
-            <div class="emoji">
-                <div class="face">
-                    <div class="eyes">
-                        <div class="eye"></div>
-                        <div class="eye"></div>
-                    </div>
-                    <div class="mouth"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section3" class="block_section">
-            <span class="label">Sound Bars</span>
-            <div class="loader">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </section>
-
-        <section id="section4" class="block_section">
-            <span class="label">Scroll Mouse</span>
-            <span class="mouse">
-                <span class="mouse-wheel"></span>
-            </span>
-        </section>
-
-        <section id="section5" class="block_section">
-            <span class="label">Hamburger</span>
-            <button type="button" class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </section>
-
-        <section id="section6" class="block_section">
-            <span class="label">Pulse Button</span>
-            <a href="#" class="button">Learn more</a>
-        </section>
-
-        <section id="section7" class="block_section">
-            <span class="label">Bounce Ball</span>
-            <div class="ball-wrapper">
-                <div class="ball"></div>
-                <div class="shallow"></div>
-            </div>
-        </section>
-
-        <section id="section8" class="block_section">
-            <span class="label">Ring Spinner</span>
-            <div class="loader-wrapper">
-                <div class="loader">
-                    <div class="loader loader-inner"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section9" class="block_section">
-            <span class="label">Gradient Wave</span>
-            <div class="animated-background"></div>
-        </section>
-
-        <section id="section10" class="block_section">
-            <span class="label">Rainbow Border</span>
-            <a href="#" class="button">
-                <span>Start Coding</span>
-            </a>
-        </section>
-
-        <section id="section11" class="block_section">
-            <span class="label">Spin Ring</span>
-            <div class="spiner"></div>
-        </section>
-
-        <section id="section12" class="block_section">
-            <span class="label">Tilt Card</span>
-            <div class="card">
-                <img src="img/whatsapp-icon.png" alt="icon">
-            </div>
-        </section>
-
-        <section id="section13" class="block_section">
-            <span class="label">Hover Card</span>
-            <div class="card">
-                <img src="img/whatsapp-icon.png" alt="icon">
-            </div>
-        </section>
-
-        <section id="section14" class="block_section">
-            <span class="label">Fill Sweep</span>
-            <a href="#" class="button">LEARN MORE</a>
-        </section>
-
-        <section id="section15" class="block_section">
-            <span class="label">Corner Button</span>
-            <a href="#" class="button">Learn more</a>
-        </section>
-
-        <section id="section16" class="block_section">
-            <span class="label">Orbit Balls</span>
-            <div id="ball1"  class="ball"></div>
-            <div id="ball2"  class="ball"></div>
-            <div id="ball3"  class="ball"></div>
-            <div id="ball4"  class="ball"></div>
-            <div id="ball5"  class="ball"></div>
-            <div id="ball6"  class="ball"></div>
-            <div id="ball7"  class="ball"></div>
-            <div id="ball8"  class="ball"></div>
-            <div id="ball9"  class="ball"></div>
-            <div id="ball10" class="ball"></div>
-            <div id="ball11" class="ball"></div>
-        </section>
-
-        <section id="section17" class="block_section">
-            <span class="label">Cross Balls</span>
-            <div id="ball1" class="ball"></div>
-            <div id="ball2" class="ball"></div>
-            <div id="ball3" class="ball"></div>
-            <div id="ball4" class="ball"></div>
-        </section>
-
-        <section id="section18" class="block_section">
-            <span class="label">Star Balls</span>
-            <div id="ball1" class="ball"></div>
-            <div id="ball2" class="ball"></div>
-            <div id="ball3" class="ball"></div>
-            <div id="ball4" class="ball"></div>
-            <div id="ball5" class="ball"></div>
-            <div id="ball6" class="ball"></div>
-        </section>
-
-        <section id="section19" class="block_section">
-            <span class="label">AirPods Case</span>
-            <div id="air_pods">
-                <div id="top_block_sect19">
-                    <div id="shal_top_sect19"></div>
-                    <div id="bottom_top_sect19"></div>
-                </div>
-                <div id="bottom_block">
-                    <div id="shal_bottom"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section20" class="block_section">
-            <span class="label">Zoom Image</span>
-            <div id="block">
-                <img id="img_section_20" src="img/section_20_img1.png" alt="preview">
-            </div>
-        </section>
-
+    <div class="card">
+        <span class="label">Blob Loader</span>
+        <ui-blob-loader></ui-blob-loader>
+    </div>
+    <div class="card">
+        <span class="label">Sound Bars</span>
+        <ui-sound-bars></ui-sound-bars>
+    </div>
+    <div class="card">
+        <span class="label">Ring Spinner</span>
+        <ui-ring-spinner></ui-ring-spinner>
+    </div>
+    <div class="card">
+        <span class="label">Spin Ring</span>
+        <ui-spin-ring></ui-spin-ring>
+    </div>
+    <div class="card">
+        <span class="label">Bounce Ball</span>
+        <ui-bounce-ball></ui-bounce-ball>
+    </div>
+    <div class="card">
+        <span class="label">Skeleton</span>
+        <ui-skeleton-loader></ui-skeleton-loader>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
+    <!-- ══ BUTTONS ════════════════════════════════════════ -->
+    <div class="category">Buttons</div>
 
+    <div class="card">
+        <span class="label">Pulse</span>
+        <ui-pulse-button></ui-pulse-button>
+    </div>
+    <div class="card">
+        <span class="label">Fill Sweep</span>
+        <ui-fill-sweep></ui-fill-sweep>
+    </div>
+    <div class="card">
+        <span class="label">Corner</span>
+        <ui-corner-button></ui-corner-button>
+    </div>
+    <div class="card">
+        <span class="label">Rainbow Border</span>
+        <ui-rainbow-button></ui-rainbow-button>
+    </div>
+    <div class="card">
+        <span class="label">Ripple</span>
+        <ui-ripple-button></ui-ripple-button>
+    </div>
+
+    <!-- ══ ANIMATIONS ════════════════════════════════════ -->
+    <div class="category">Animations</div>
+
+    <div class="card">
+        <span class="label">Gradient Wave</span>
+        <ui-gradient-wave></ui-gradient-wave>
+    </div>
+    <div class="card">
+        <span class="label">Orbit Balls</span>
+        <ui-orbit-balls></ui-orbit-balls>
+    </div>
+    <div class="card">
+        <span class="label">Cross Balls</span>
+        <ui-cross-balls></ui-cross-balls>
+    </div>
+    <div class="card">
+        <span class="label">Star Balls</span>
+        <ui-star-balls></ui-star-balls>
+    </div>
+    <div class="card">
+        <span class="label">Neon Text</span>
+        <ui-neon-text></ui-neon-text>
+    </div>
+    <div class="card">
+        <span class="label">Typing Text</span>
+        <ui-typing-text></ui-typing-text>
+    </div>
+
+    <!-- Infinity: 1×1 — fits normally -->
+    <div class="card" style="background:#000">
+        <span class="label">Infinity</span>
+        <ui-infinity-dots></ui-infinity-dots>
+    </div>
+
+    <!-- ══ SHOWCASE ══════════════════════════════════════ -->
+    <div class="category">Showcase</div>
+
+    <!-- Jar: 2×2 — needs room for the bowl + shadow -->
+    <div class="card x2" style="background:#121212">
+        <span class="label">Special Jar</span>
+        <ui-special-jar></ui-special-jar>
+    </div>
+
+    <!-- Cube: 2×2 with 3D overflow -->
+    <div class="card x2 overflow-visible" style="background:#050505">
+        <span class="label">Cube Rotate</span>
+        <ui-cube-rotate></ui-cube-rotate>
+    </div>
+
+    <!-- ══ INTERACTIVE ════════════════════════════════════ -->
+    <div class="category">Interactive</div>
+
+    <div class="card">
+        <span class="label">Toggle Switch</span>
+        <ui-toggle-switch></ui-toggle-switch>
+    </div>
+    <div class="card">
+        <span class="label">Floating Label</span>
+        <ui-floating-label></ui-floating-label>
+    </div>
+    <div class="card">
+        <span class="label">Progress Bar</span>
+        <ui-progress-bar></ui-progress-bar>
+    </div>
+    <div class="card">
+        <span class="label">Heart Like</span>
+        <ui-heart-like></ui-heart-like>
+    </div>
+    <div class="card">
+        <span class="label">Notification Bell</span>
+        <ui-notification-bell></ui-notification-bell>
+    </div>
+
+    <!-- ══ WIDGETS ════════════════════════════════════════ -->
+    <div class="category">Widgets</div>
+
+    <div class="card" style="background:#3d1c7a">
+        <span class="label">Rolling Eyes</span>
+        <ui-rolling-eyes></ui-rolling-eyes>
+    </div>
+    <div class="card">
+        <span class="label">Scroll Mouse</span>
+        <ui-scroll-mouse></ui-scroll-mouse>
+    </div>
+    <div class="card">
+        <span class="label">Hamburger</span>
+        <ui-hamburger></ui-hamburger>
+    </div>
+    <div class="card">
+        <span class="label">Tilt Card</span>
+        <ui-tilt-card></ui-tilt-card>
+    </div>
+    <div class="card">
+        <span class="label">Hover Card</span>
+        <ui-hover-card></ui-hover-card>
+    </div>
+    <div class="card">
+        <span class="label">Clock</span>
+        <ui-css-clock></ui-css-clock>
+    </div>
+    <div class="card overflow-visible">
+        <span class="label">AirPods Case</span>
+        <ui-airpods-case></ui-airpods-case>
+    </div>
+    <div class="card">
+        <span class="label">Zoom Image</span>
+        <ui-zoom-image></ui-zoom-image>
+    </div>
+
+</div>
+</body>
 </html>

@@ -2,15 +2,15 @@ const PROJECTS = [
     { name: 'Parallax',  src: './components/ParallaxEffect/index.html' },
     { name: 'Loader',    src: './components/rainbowBlocks/index.html' },
     { name: 'Orbit',     src: './components/cycle/index.html' },
-    { name: 'Some Jar',  src: './components/specialJar/index.html' },
-    { name: 'Cube',      src: './components/cubeRotate/index.html' },
-    { name: 'Infinity',  src: './components/Infinity/index.html' },
+    // { name: 'Some Jar',  src: './components/specialJar/index.html' },
+    // { name: 'Cube',      src: './components/cubeRotate/index.html' },
+    // { name: 'Infinity',  src: './components/Infinity/index.html' },
     { name: 'Projects',  src: './components/newpoj/index.html' },
     { name: 'RPS',       src: './components/RockPaperScissors/index.html' },
     { name: 'FlappyB',   src: './components/flappy_bird/index.html' },
-    { name: 'M',         src: './components/matrix/index.html' },
-    // { name: 'S',         src: './components/SnakeGame/index.html' },
-    { name: 'T',      src: './components/tankGame/index.html' },
+    { name: 'Matrix',         src: './components/matrix/index.html' },
+    // { name: 'Snake',         src: './components/SnakeGame/index.html' },
+    { name: 'Tanks',      src: './components/tankGame/index.html' },
 ];
 
 /* ─────────────────────────────────────────────────────*/

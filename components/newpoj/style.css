@@ -1,18 +1,28 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ════════════════════════════════════════════════════════
+   style.css — gallery shell
+   Component styles live inside each Web Component's Shadow DOM.
+════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ┌─────────────────────────────────────────────────────┐
+   │  GRID CONFIG — edit these 3 lines to change layout  │
+   └─────────────────────────────────────────────────────┘ */
+:root {
+    --cols:   4;       /* number of columns  (try 3, 5, 6…)  */
+    --cell: 220px;     /* 1×1 card size       (try 180px, 260px…) */
+    --gap:   10px;     /* gap between cards   (try 6px, 16px…)  */
 }
+/* ──────────────────────────────────────────────────── */
 
 :root {
-    --bg:      #0d0d0f;
-    --card:    #131315;
-    --card-h:  #18181b;
-    --border:  rgba(255, 255, 255, 0.055);
-    --border-h:rgba(255, 255, 255, 0.10);
-    --label:   rgba(255, 255, 255, 0.18);
-    --gap:     10px;
-    --r:       14px;
+    --bg:       #0d0d0f;
+    --card:     #131315;
+    --card-h:   #18181b;
+    --border:   rgba(255,255,255,0.055);
+    --border-h: rgba(255,255,255,0.10);
+    --label:    rgba(255,255,255,0.18);
+    --r:        14px;
 }
 
 body {
@@ -22,17 +32,17 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* ── GRID ── */
-#main-section {
+/* ── Grid ─────────────────────────────────────────── */
+#grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(var(--cols), minmax(var(--cell), 1fr));
     gap: var(--gap);
 }
 
-/* ── CARD ── */
-.block_section {
+/* ── Card shell ───────────────────────────────────── */
+.card {
     position: relative;
-    height: 220px;
+    height: var(--cell);
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--r);
@@ -42,23 +52,55 @@ body {
     overflow: hidden;
     transition: background .2s, border-color .2s;
 }
-
-.block_section:hover {
+.card:hover {
     background: var(--card-h);
     border-color: var(--border-h);
 }
 
-/* ── LABEL ── */
-.label {
+/* ── Card size variants ───────────────────────────── */
+
+/* 2×2 — jar, cube, or anything that needs breathing room */
+.card.x2 {
+    grid-column: span 2;
+    grid-row:    span 2;
+    height: calc(var(--cell) * 2 + var(--gap));
+    /* height auto-adjusts when --cell or --gap changes ↑ */
+}
+
+/* 2×1 — wide but single row */
+.card.x2w {
+    grid-column: span 2;
+}
+
+/* 1×2 — tall single column */
+.card.x2t {
+    grid-row: span 2;
+    height: calc(var(--cell) * 2 + var(--gap));
+}
+
+/* Allow 3D / glow overflow */
+.card.overflow-visible {
+    overflow: visible;
+    transform-style: preserve-3d;
+}
+
+/* ── Category label (full-width row) ─────────────── */
+.category {
+    grid-column: 1 / -1;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,.16);
+    padding: 18px 2px 4px;
+    border-top: 1px solid rgba(255,255,255,.05);
+}
+.category:first-child { border-top: none; padding-top: 2px; }
+
+/* ── Card label ───────────────────────────────────── */
+.card > span.label {
     position: absolute;
-    top: 11px;
-    left: 14px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    top: 11px; left: 14px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--label);
-    pointer-events: none;
-    user-select: none;
-    z-index: 10;
+    pointer-events: none; user-select: none; z-index: 10;
 }
